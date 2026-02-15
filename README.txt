@@ -1,4 +1,6 @@
-Its obvious but run the commands in terminal/powershell ;)
+Hello Viewer, Hope you are doing good! 
+
+Please run these commands in terminal/powershell ;)
 
 1. Create a Virtual Environment in the path you open the file:
 	
