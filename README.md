@@ -1,5 +1,7 @@
 # Orthogonal Matching Pursuit (OMP) Project
 
+## 📌 Project Overview
+
 This repository contains the implementation and analysis of the **Orthogonal Matching Pursuit** algorithm, completed as part of the CS/MA 321 Introduction to Numerical Methods final project. OMP is a greedy algorithm designed for finding sparse solutions to underdetermined linear systems where there are more variables than constraints ($m \ll n$).
 
 ---
@@ -121,7 +123,7 @@ This ensures the new residual is **orthogonal** to all atoms currently in the su
 
 ---
 
-## Comparison Table
+## ⚖️ Comparison Table
 
 | Feature | Standard Least Squares | Orthogonal Matching Pursuit |
 | :--- | :--- | :--- |
@@ -132,7 +134,7 @@ This ensures the new residual is **orthogonal** to all atoms currently in the su
 
 ---
 
-## Connection to Project Code
+## 🛜 Connection to Project Code
 
 * **Signal Recovery**: In `Sparse_signal_recovery_using_OMP.py`, we observe the residual decreasing as more atoms are added until it hits the error threshold $\epsilon_0$.
 
@@ -241,7 +243,7 @@ When you watch a video online, the app doesn't send you every single pixel for e
 
 ---
 
-## **Contributors**:
+## 💥 **Contributors**:
    
    - Sharan Ravula
    - Shane Wojcicki
