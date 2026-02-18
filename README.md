@@ -30,7 +30,7 @@
 
  	- Windows: On Windows, you can use Chocolatey as a package manager.
 
-	   >  (Note: If you prefer to use Homebrew on Windows, consider installing it via WSL (Windows Subsystem for Linux) and following the macOS instructions within your WSL terminal.)
+	   >  Note: If you prefer to use Homebrew on Windows, consider installing it via WSL (Windows Subsystem for Linux) and following the macOS instructions within your WSL terminal.
 
 	   + Open PowerShell as Administrator.
 	   + Run the following command to install Chocolatey:
