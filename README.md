@@ -14,6 +14,8 @@
       ```bash
 	  python3 -m venv venv
 	  source venv/bin/activate
+
+    > To exit from the virtual environment just type `deactivate` in the command shell and press enter
       
     - Windows:
       
@@ -74,5 +76,3 @@
 	  python OMP_Feature-Selection_in_Linear_Regression.py
 	  python Sparse_signal_recovery_using_OMP.py
 	  python OMP_using_Scikit-learn.py
-
-> To exit from the virtual environment just type `deactivate` in the command shell and press enter
