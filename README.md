@@ -7,7 +7,7 @@ This repository contains the implementation and analysis of the **Orthogonal Mat
 ## 📂 Repository Structure
 
 ```text
-omp-Project/
+CS-321-Orthogonal-Matching-Pursuit/
 │
 │
 ├── docs/                               				# Project documentation details
