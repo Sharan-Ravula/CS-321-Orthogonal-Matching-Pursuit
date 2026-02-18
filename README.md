@@ -35,7 +35,7 @@ CS-321-Orthogonal-Matching-Pursuit/
 
 ## 🧠 Algorithm Overview
 
-OMP approximates the solution of $(`P_0): \min_x \|x\|_0`$ subject to $`Ax = b`$. It operates by iteratively building up an approximation atom by atom in a greedy fashion.
+OMP approximates the solution of $(P_0): \min_x \|x\|_0$ subject to $`Ax = b`$. It operates by iteratively building up an approximation atom by atom in a greedy fashion.
 
 ### The Iterative Process
 
