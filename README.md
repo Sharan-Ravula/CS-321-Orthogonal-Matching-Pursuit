@@ -207,6 +207,6 @@ By solving the least squares problem at every step, OMP ensures that the new res
    - Mekha Rajesh
    - Fayek Sharaf
 
-> I had a lot of fun with the team when we were working on the project and giving presentation
+> I had a lot of fun with the team when we were working on the project and during the presentation (got bonus points for it aswell)
 
 <img width="1715" height="1291" alt="team_5" src="https://github.com/user-attachments/assets/dd96fd46-0d7f-46bb-841b-f85e706c2321" />
