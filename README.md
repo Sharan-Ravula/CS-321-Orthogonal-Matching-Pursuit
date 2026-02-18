@@ -1,6 +1,6 @@
 # Orthogonal Matching Pursuit (OMP) Project
 
-This repository contains the implementation and analysis of the **Orthogonal Matching Pursuit** algorithm, completed as part of the CS/MA 321 Numerical Analysis final project. OMP is a greedy algorithm designed for finding sparse solutions to underdetermined linear systems where there are more variables than constraints ($m \ll n$).
+This repository contains the implementation and analysis of the **Orthogonal Matching Pursuit** algorithm, completed as part of the CS/MA 321 Introduction to Numerical Methods final project. OMP is a greedy algorithm designed for finding sparse solutions to underdetermined linear systems where there are more variables than constraints ($m \ll n$).
 
 ---
 
