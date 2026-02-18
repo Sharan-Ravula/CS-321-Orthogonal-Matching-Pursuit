@@ -207,3 +207,7 @@ By solving the least squares problem at every step, OMP ensures that the new res
    - Fayek Sharaf
 
 ![team-5](https://github.com/user-attachments/assets/db025bbf-968a-4093-9255-b109ed053eb4)
+
+
+
+<img width="1715" height="1291" alt="team_5" src="https://github.com/user-attachments/assets/dd96fd46-0d7f-46bb-841b-f85e706c2321" />
