@@ -105,7 +105,7 @@ This ensures the new residual is **orthogonal** to all atoms currently in the su
 
 | Feature | Standard Least Squares | Orthogonal Matching Pursuit |
 | :--- | :--- | :--- |
-| **Objective** | Minimize $\|Ax - b\|_2^2$ | Minimize $\|x\|_0$ s.t. $Ax=b$ |
+| **Objective** | Minimize $\|Ax - b\|_^2$ | Minimize $\|x\|_0$ s.t. $Ax=b$ |
 | **System Type** | Usually Overdetermined ($m > n$) | Underdetermined ($m \ll n$) |
 | **Logic** | Global optimization | Greedy, iterative selection |
 | **Result** | Dense solution (mostly non-zeros) | Sparse solution (mostly zeros) |
