@@ -1,6 +1,6 @@
 # Orthogonal Matching Pursuit (OMP) Project
 
-This repository contains the implementation and analysis of the **Orthogonal Matching Pursuit (OMP)** algorithm, completed as part of the CS/MA 321 Numerical Analysis final project[cite: 1, 33]. [cite_start]OMP is a greedy algorithm designed for finding sparse solutions to underdetermined linear systems where there are more variables than constraints ($m \ll n$).
+This repository contains the implementation and analysis of the **Orthogonal Matching Pursuit (OMP)** algorithm, completed as part of the CS/MA 321 Numerical Analysis final project. OMP is a greedy algorithm designed for finding sparse solutions to underdetermined linear systems where there are more variables than constraints ($m \ll n$).
 
 ---
 
@@ -11,7 +11,7 @@ omp-Project/
 │
 │
 ├── docs/                               				# Project documentation details
-│   ├── cs_ma 321_final.pdf                         	 # The original project prompt and technical requirements for the Final Project
+│   ├── cs_ma 321_final.pdf                         	# The original project prompt and technical requirements for the Final Project
 │   ├── cs_ma_321_omp.pdf        						# The comprehensive slide deck created by the team, covering OMP theory, least squares connection, and real-world applications
 │
 ├── scripts/                                       		# Python implementations demonstrating different use cases for the OMP algorithm.
@@ -23,8 +23,8 @@ omp-Project/
 │   ├── omp_feature-selection_linear_regression.py      # Generated plot showing the original sparse signal, the noisy observed signal, and the successfully recovered signal using OMP
 │   ├── omp-output.png                           		# A screenshot of the terminal output showing the original signal vs. estimated coefficients and the identified support set
 │
-├── README.md                           # Project overview and instructions
-└── LICENSE                             # License information for the repository
+├── README.md                           				# Project overview and instructions
+└── LICENSE                             				# License information for the repository
 ```
 
 ---
@@ -115,7 +115,6 @@ This ensures the new residual is **orthogonal** to all atoms currently in the su
 ## Connection to Project Code
 
 * **Signal Recovery**: In `Sparse_signal_recovery_using_OMP.py`, we observe the residual decreasing as more atoms are added until it hits the error threshold $\epsilon_0$.
-* **Image Denoising**: In `image-denoise.py`, OMP is used to find a sparse representation of image patches. Noise is ignored because it typically lacks a sparse representation in the transform domain.
 
 ### Residual Decorrelation
 
