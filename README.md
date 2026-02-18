@@ -43,6 +43,23 @@ OMP approximates the solution of $(P_0): \min_x \|x\|_0$ subject to $Ax = b$. It
 
 ---
 
+## ✨ Analogy
+
+**What is OMP? 🤔**
+
+Imagine you have a giant box of 1,000 different Lego bricks (the Dictionary or Matrix $A$). I show you a finished tower (the Signal or Vector $b$) and tell you that this tower was actually built using only 4 specific bricks from that box
+
+### The Iterative Process: How do you find those 4 bricks?
+
+- **Search (Sweep)**: You look through the box and pick the one brick that looks most like a part of the tower
+- Test (Update Support): You put that brick down and see how much of the tower it explains.
+- Adjust (Least Squares): You adjust the position of that brick to make sure it fits perfectly.
+- Repeat: Now you look at the "leftover" part of the tower (the Residual) and go back to the box to find the next best brick.
+
+> You keep doing this until you’ve rebuilt the tower exactly, using only those 4 pieces. OMP is "greedy" because it picks the best-fitting piece at every single step instead of trying to look at all 1,000 pieces at once.
+
+---
+
 ## 📐 Mathematical Foundation: The Least Squares Connection
 
 OMP is fundamentally rooted in the **Method of Least Squares** to ensure global progress at each greedy step.
@@ -198,8 +215,25 @@ By solving the least squares problem at every step, OMP ensures that the new res
 
 ## 📊 Real-world Applications
 
-- **Image Denoising**: Because noise typically lacks a sparse representation in transform domains (like DCT), OMP ignores it during reconstruction, effectively denoising the image.
-- **Feature Selection**: In high-dimensional datasets, OMP selects only the most informative variables (atoms), improving model interpretability
+1. **Medical Imaging (MRI Scans)**:
+MRI machines take a long time to scan your body. By using OMP, doctors can take a "sparse" or incomplete scan (fewer data points) and use the algorithm to "fill in the blanks" to create a high-quality image. This means you spend less time inside the loud MRI machine.
+
+2. **Cleaning Up Photos (Image Denoising)**:
+If you take a photo in the dark, it often looks "grainy" or "noisy". Because noise is random and doesn't follow a pattern, it isn't "sparse". OMP looks at the photo, finds the clear patterns that do belong there, and ignores the random grain, giving you a much cleaner picture.
+
+3. **Smart Data Selection (Feature Selection)**:
+If a scientist is trying to figure out why a disease happens, they might have 20,000 different pieces of data about a patient. OMP can act like a filter, picking out the 5 or 10 most important "features" (like specific genes or habits) that actually matter, ignoring the thousands of other distracting details.
+
+4. **Zoom and Video Streaming**:
+When you watch a video online, the app doesn't send you every single pixel for every single frame—that would be too much data. It sends a "sparse" version, and algorithms like OMP help your device reconstruct the full, sharp video on your screen in real-time.
+
+---
+
+## 📚 References
+
+- **Code**: [geeksforgeeks_omp](https://www.geeksforgeeks.org/data-science/orthogonal-matching-pursuit-omp-using-sklearn/)
+- **Theory**: [sciencedirect_omp](https://www.sciencedirect.com/topics/engineering/orthogonal-matching-pursuit)
+- Rubinstein, R., Zibulevsky, M., & Elad, M. (2010). Efficient implementation of the K-SVD algorithm using batch orthogonal matching pursuit. IEEE Transactions on Signal Processing, 57(12), 5636-5646. https://doi.org/10.1109/TSP.2009.2039178
 
 ---
 
