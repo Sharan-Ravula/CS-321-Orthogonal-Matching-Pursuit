@@ -35,12 +35,12 @@ CS-321-Orthogonal-Matching-Pursuit/
 
 ## 🧠 Algorithm Overview
 
-OMP approximates the solution of $(P_0): \min_x \|x\|_0$ subject to $`Ax = b`$. It operates by iteratively building up an approximation atom by atom in a greedy fashion.
+OMP approximates the solution of $(`P_0): \min_x \|x\|_0`$ subject to $`Ax = b`$. It operates by iteratively building up an approximation atom by atom in a greedy fashion.
 
 ### The Iterative Process
 
-1. **Sweep/Selection**: Compute the errors for all columns `$j$` and find a minimizer `$j_0$` that best correlates with the current residual.
-2. **Update Support**: Add the index of this column to the support set `$S^k = S^{k-1} \cup \{j_0\}$`.
+1. **Sweep/Selection**: Compute the errors for all columns $`j`$ and find a minimizer $`j_0`$ that best correlates with the current residual.
+2. **Update Support**: Add the index of this column to the support set $`S^k = S^{k-1} \cup \{j_0\}`$.
 3. **Update Provisional Solution (Least Squares)**: Compute `$x^k$` as the minimizer of `$\|Ax - b\|_2^2$` subject to the current support.
 4. **Update Residual**: Compute the new residual `$r^k = b - Ax^k$`.
 5. **Stopping Rule**: Terminate if `$\|r^k\|_2 < \epsilon_0$` ; otherwise, apply another iteration.
