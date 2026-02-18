@@ -10,18 +10,18 @@ This repository contains the implementation and analysis of the **Orthogonal Mat
 omp-Project/
 │
 │
-├── docs/                               # Project documentation details
-│   ├── cs_ma 321_final.pdf                         # Draw.io file shows all different techniquies and methods of ETL
-│   ├── cs_ma_321_omp.pdf        # Draw.io file shows the project's architecture with pdf
+├── docs/                               				# Project documentation details
+│   ├── cs_ma 321_final.pdf                         	 # The original project prompt and technical requirements for the Final Project
+│   ├── cs_ma_321_omp.pdf        						# The comprehensive slide deck created by the team, covering OMP theory, least squares connection, and real-world applications
 │
-├── scripts/                            # Python Code
-│   ├── omp_feature-selection_linear_regression.py                        # Scripts for cleaning, transforming data and quality checks
-│   ├── omp_using_scikit_learn.py                           # Scripts for creating analytical models and quality checks
-│   ├── sparse_signal_recovery_using_omp.py               # to initialize the database, with commands
+├── scripts/                                       		# Python implementations demonstrating different use cases for the OMP algorithm.
+│   ├── omp_feature-selection_linear_regression.py 		# Demonstrates how OMP can be used as a feature selection tool to identify the most significant variables in a regression model
+│   ├── omp_using_scikit_learn.py                  		# A foundational script showing the implementation of the `OrthogonalMatchingPursuit` class on a basic sparse signal
+│   ├── sparse_signal_recovery_using_omp.py        		# Illustrates the recovery of a sparse signal from noisy measurements, including visual comparisons between original and recovered data
 │
-├── output/                            # Output Results
-│   ├── omp_feature-selection_linear_regression.py                        # Scripts for cleaning, transforming data and quality checks
-│   ├── omp-output.png                           # Scripts for creating analytical models and quality checks
+├── output/                                           	# Visual evidence of the algorithm's performance and execution results.
+│   ├── omp_feature-selection_linear_regression.py      # Generated plot showing the original sparse signal, the noisy observed signal, and the successfully recovered signal using OMP
+│   ├── omp-output.png                           		# A screenshot of the terminal output showing the original signal vs. estimated coefficients and the identified support set
 │
 ├── README.md                           # Project overview and instructions
 └── LICENSE                             # License information for the repository
