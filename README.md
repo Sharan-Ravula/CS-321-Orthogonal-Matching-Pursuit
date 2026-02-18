@@ -63,9 +63,10 @@ Imagine you have a giant box of 1,000 different Lego bricks (the Dictionary or M
 
 ## 📐 Mathematical Foundation: The Least Squares Connection
 
-OMP is fundamentally rooted in the **Method of Least Squares** to ensure global progress at each greedy step.
+> OMP is fundamentally rooted in the **Method of Least Squares** to ensure global progress at each greedy step.
 
 ### Coefficient Update
+
 Once a new index is added to the support, OMP re-calculates the values for **all** indices currently in $S^k$ by solving a linear least squares problem restricted to the active columns of $A$. This is often computed using the Moore-Penrose pseudoinverse:
 
 $$\hat{\theta}_{S} = (X_{S}^T X_{S})^{-1} X_{S}^T y$$
@@ -85,6 +86,7 @@ Where $A \in \mathbb{R}^{m \times n}$ is an underdetermined sensing matrix ($m \
 OMP builds a sparse solution by selecting one "atom" (column of $A$) at each iteration that best represents the remaining signal (the residual).
 
 ### 1. Atom Selection (Matching)
+
 At each iteration $k$, we compute the correlation between each column $a_j$ of the matrix $A$ and the current residual $r^{k-1}$. We look for the index $j_0$ that minimizes the error $\epsilon(j)$:
 
 $$\epsilon(j) = \min_{z_j} \|a_j z_j - r^{k-1}\|_2^2$$
