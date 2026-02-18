@@ -1,6 +1,6 @@
 # Orthogonal Matching Pursuit (OMP) Project
 
-This repository contains the implementation and analysis of the **Orthogonal Matching Pursuit (OMP)** algorithm, completed as part of the CS/MA 321 Numerical Analysis final project. OMP is a greedy algorithm designed for finding sparse solutions to underdetermined linear systems where there are more variables than constraints ($m \ll n$).
+This repository contains the implementation and analysis of the **Orthogonal Matching Pursuit** algorithm, completed as part of the CS/MA 321 Numerical Analysis final project. OMP is a greedy algorithm designed for finding sparse solutions to underdetermined linear systems where there are more variables than constraints ($m \ll n$).
 
 ---
 
@@ -39,7 +39,7 @@ OMP approximates the solution of $(P_0): \min_x \|x\|_0$ subject to $Ax = b$. It
 2. **Update Support**: Add the index of this column to the support set $S^k = S^{k-1} \cup \{j_0\}$.
 3. **Update Provisional Solution (Least Squares)**: Compute $x^k$ as the minimizer of $\|Ax - b\|_2^2$ subject to the current support.
 4. **Update Residual**: Compute the new residual $r^k = b - Ax^k$.
-5. **Stopping Rule**: Terminate if $\|r^k\|_2 < \epsilon_0$; otherwise, apply another iteration.
+5. **Stopping Rule**: Terminate if $\|r^k\|_2 < \epsilon_0$ ; otherwise, apply another iteration.
 
 ---
 
