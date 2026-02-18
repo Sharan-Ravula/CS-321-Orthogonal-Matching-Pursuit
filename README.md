@@ -1,78 +1,55 @@
-# Orthogonal Matching Pursuit
----
+# Orthogonal Matching Pursuit (OMP) Project
 
-> Hello Viewer, Hope you are doing good! 
-
-> Please run these commands in terminal/powershell ;)
+[cite_start]This repository contains the implementation and analysis of the **Orthogonal Matching Pursuit (OMP)** algorithm, completed as part of the CS/MA 321 Numerical Analysis final project[cite: 1, 33]. [cite_start]OMP is a greedy algorithm designed for finding sparse solutions to underdetermined linear systems where there are more variables than constraints ($m \ll n$)[cite: 5, 9].
 
 ---
 
-1. Create a Virtual Environment in the path you open the file:
-    
-	- macOS / Linux:
+## 📂 Repository Structure
 
-      ```bash
-	  python3 -m venv venv
-	  source venv/bin/activate
+The project is organized into documentation, source scripts, and visual outputs:
 
-    > To exit from the virtual environment just type `deactivate` in the command shell and press enter
-      
-    - Windows:
-      
-	  ```powershell
-	  python -m venv venv
-	  .\venv\Scripts\activate
+* [cite_start]**`docs/`**: Contains the project requirements (`CS_MA 321_final.pdf`) and the group’s final presentation slides (`CS321 Orthogonal Matching Pursuit.pdf`)[cite: 1, 46].
+* **`scripts/`**: Core Python implementations:
+    * [cite_start]`image-denoise.py`: Application of OMP to reconstruct and denoise images using patch-based processing[cite: 681, 710].
+    * [cite_start]`OMP_Feature-Selection_in_Linear_Regression.py`: Uses OMP to identify the most significant features in a regression model[cite: 359, 382].
+    * [cite_start]`OMP_using_Scikit-learn.py`: A basic implementation demonstrating the `OrthogonalMatchingPursuit` class[cite: 201, 224].
+    * [cite_start]`Sparse_signal_recovery_using_OMP.py`: Demonstrates the recovery of a sparse signal from noisy measurements[cite: 262, 293].
+* [cite_start]**`output/`**: Visual results and performance graphs, including signal recovery plots (`omp.png`) and terminal outputs (`Output.png`)[cite: 317, 746].
+* [cite_start]**`README.txt`**: Technical guide for environment setup and script execution[cite: 747].
 
-2. Install Homebrew (optional but recommended):
-   
-    - macOS:
-      
-      ```bash	
-	  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+---
 
- 	- Windows: On Windows, you can use Chocolatey as a package manager.
+## 🧠 Algorithm Overview
 
-	   >  Note: If you prefer to use Homebrew on Windows, consider installing it via WSL (Windows Subsystem for Linux) and following the macOS instructions within your WSL terminal.
+[cite_start]OMP approximates the solution of $(P_0): \min_x \|x\|_0$ subject to $Ax = b$[cite: 12]. [cite_start]It operates by iteratively building up an approximation atom by atom in a greedy fashion[cite: 599, 600].
 
-	   + Open PowerShell as Administrator.
-	   + Run the following command to install Chocolatey:
-   
-	     ```powershell
-		 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+### The Iterative Process
 
-	   + Close and reopen your PowerShell, then verify Chocolatey is installed:
-   
-		 ```powershell
-		 choco --version
+1.  [cite_start]**Sweep/Selection**: Compute the errors for all columns $j$ and find a minimizer $j_0$ that best correlates with the current residual[cite: 20, 22].
+2.  [cite_start]**Update Support**: Add the index of this column to the support set $S^k = S^{k-1} \cup \{j_0\}$[cite: 22].
+3.  [cite_start]**Update Provisional Solution (Least Squares)**: Compute $x^k$ as the minimizer of $\|Ax - b\|_2^2$ subject to the current support[cite: 23].
+4.  [cite_start]**Update Residual**: Compute the new residual $r^k = b - Ax^k$[cite: 24].
+5.  [cite_start]**Stopping Rule**: Terminate if $\|r^k\|_2 < \epsilon_0$; otherwise, apply another iteration[cite: 25].
 
-4. Install Dependencies: First, make sure pip is updated:
-		
-	- macOS/Linux:
+---
 
-	  ```bash	
-	  python3 -m pip install --upgrade pip
-	  pip --version
-	  pip install scikit-learn numpy matplotlib
+## 📐 Mathematical Foundation: The Least Squares Connection
 
-    - Windows:
-      
-	  ```powershell
-	  python -m pip install --upgrade pip
-	  pip --version
-	  pip install scikit-learn numpy matplotlib
+OMP is fundamentally rooted in the **Method of Least Squares** to ensure global progress at each greedy step.
 
-5. To run the code:
-	
-	- macOS/Linux:
+### Coefficient Update
+[cite_start]Once a new index is added to the support, OMP re-calculates the values for **all** indices currently in $S^k$ by solving a linear least squares problem restricted to the active columns of $A$[cite: 486, 504]. This is often computed using the Moore-Penrose pseudoinverse:
 
-	  ```bash
-	  python3 OMP_Feature-Selection_in_Linear_Regression.py
-	  python3 Sparse_signal_recovery_using_OMP.py
-	  python3 OMP_using_Scikit-learn.py
+[cite_start]$$\hat{\theta}_{S} = (X_{S}^T X_{S})^{-1} X_{S}^T y$$ [cite: 505, 606]
 
-    - Windows:
-      
-	  ```powershell
-	  python OMP_Feature-Selection_in_Linear_Regression.py
-	  python Sparse_signal_recovery_using_OMP.py
-	  python OMP_using_Scikit-learn.py
+### Residual Decorrelation
+[cite_start]By solving the least squares problem at every step, OMP ensures that the new residual is **orthogonal** to all columns currently in the support set[cite: 597]. [cite_start]This prevents the algorithm from picking the same column twice and ensures the residual norm decreases efficiently[cite: 602, 603].
+
+---
+
+## 🛠 Installation & Usage
+
+[cite_start]To run the scripts, ensure you have a Python environment with the following dependencies installed[cite: 752]:
+
+```bash
+pip install scikit-learn numpy matplotlib
