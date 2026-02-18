@@ -35,15 +35,15 @@ CS-321-Orthogonal-Matching-Pursuit/
 
 ## 🧠 Algorithm Overview
 
-OMP approximates the solution of $(P_0): \min_x \|x\|_0$ subject to $`Ax = b`$. It operates by iteratively building up an approximation atom by atom in a greedy fashion.
+OMP approximates the solution of $`(P_0)` `:` `\min_x` `\|x\|_0`$ subject to $`Ax` `=` `b`$. It operates by iteratively building up an approximation atom by atom in a greedy fashion.
 
 ### The Iterative Process
 
 1. **Sweep/Selection**: Compute the errors for all columns $`j`$ and find a minimizer $`j_0`$ that best correlates with the current residual.
-2. **Update Support**: Add the index of this column to the support set $`S^k = S^{k-1} \cup \{j_0\}`$.
-3. **Update Provisional Solution (Least Squares)**: Compute `$x^k$` as the minimizer of `$\|Ax - b\|_2^2$` subject to the current support.
-4. **Update Residual**: Compute the new residual `$r^k = b - Ax^k$`.
-5. **Stopping Rule**: Terminate if `$\|r^k\|_2 < \epsilon_0$` ; otherwise, apply another iteration.
+2. **Update Support**: Add the index of this column to the support set $`S^k` `=` `S^{k-1}` `\cup` `\{j_0\}`$.
+3. **Update Provisional Solution (Least Squares)**: Compute $`x^k`$ as the minimizer of $`\|Ax` `-` `b\|_2^2`$ subject to the current support.
+4. **Update Residual**: Compute the new residual $`r^k` `=` `b` `-` `Ax^k`$.
+5. **Stopping Rule**: Terminate if $`\|r^k\|_2` `<` `\epsilon_0`$ ; otherwise, apply another iteration.
 
 ---
 
@@ -51,7 +51,7 @@ OMP approximates the solution of $(P_0): \min_x \|x\|_0$ subject to $`Ax = b`$. 
 
 **What is OMP? 🤔**
 
-Imagine you have a giant box of 1,000 different Lego bricks (the Dictionary or Matrix `$A$`). I show you a finished tower (the Signal or Vector `$b$`) and tell you that this tower was actually built using only 4 specific bricks from that box
+Imagine you have a giant box of 1,000 different Lego bricks (the Dictionary or Matrix $`A`$). I show you a finished tower (the Signal or Vector $`b`$) and tell you that this tower was actually built using only 4 specific bricks from that box
 
 ### The Iterative Process: How do you find those 4 bricks?
 
@@ -70,55 +70,55 @@ Imagine you have a giant box of 1,000 different Lego bricks (the Dictionary or M
 
 ### Coefficient Update
 
-Once a new index is added to the support, OMP re-calculates the values for **all** indices currently in `$S^k$` by solving a linear least squares problem restricted to the active columns of `$A$`. This is often computed using the Moore-Penrose pseudoinverse:
+Once a new index is added to the support, OMP re-calculates the values for **all** indices currently in $`S^k`$ by solving a linear least squares problem restricted to the active columns of $`A`$. This is often computed using the Moore-Penrose pseudoinverse:
 
-`$$\hat{\theta}_{S} = (X_{S}^T X_{S})^{-1} X_{S}^T y$$`
+$`\hat{\theta}_{S}` `=` `(X_{S}^T X_{S})^{-1}` `X_{S}^T` `y`$
 
 ## Mathematical Foundation: OMP and Least Squares
 
-The Orthogonal Matching Pursuit (OMP) algorithm is a greedy approach used to solve the sparse recovery problem `$(P_0)$`:
+The Orthogonal Matching Pursuit (OMP) algorithm is a greedy approach used to solve the sparse recovery problem $`(P_0)`$:
 
-`$$\min_{x} \|x\|_0 \text{ subject to } Ax = b$$`
+$`\min_{x}` `\|x\|_0` \text{ `subject to` } `Ax` `=` `b`$
 
-Where `$A \in \mathbb{R}^{m \times n}$` is an underdetermined sensing matrix `($m \ll n$)`. OMP is fundamentally connected to the **Method of Least Squares**, which it uses iteratively to refine the solution.
+Where $`A` \in `\mathbb{R}^{m \times n}`$ is an underdetermined sensing matrix ($`m \ll n`$). OMP is fundamentally connected to the **Method of Least Squares**, which it uses iteratively to refine the solution.
 
 ---
 
 ## The Iterative Process
 
-OMP builds a sparse solution by selecting one "atom" (column of `$A$`) at each iteration that best represents the remaining signal (the residual).
+OMP builds a sparse solution by selecting one "atom" (column of $`A`$) at each iteration that best represents the remaining signal (the residual).
 
 ### 1. Atom Selection (Matching)
 
-At each iteration `$k$`, we compute the correlation between each column `$a_j$` of the matrix `$A$` and the current residual `$r^{k-1}$`. We look for the index `$j_0$` that minimizes the error `$\epsilon(j)$`:
+At each iteration $`k`$, we compute the correlation between each column $`a_j`$ of the matrix $`A`$ and the current residual $`r^{k-1}`$. We look for the index $`j_0`$ that minimizes the error $`\epsilon(j)`$:
 
-`$$\epsilon(j) = \min_{z_j} \|a_j z_j - r^{k-1}\|_2^2$$`
+$`\epsilon(j)` `=` `\min_{z_j}` `\|a_j z_j` `-` `r^{k-1}\|_2^2`$
 
-Using the optimal choice for the coefficient `$z_j^*$`:
+Using the optimal choice for the coefficient $`z_j^*`$:
 
-`$$z_j^* = \frac{a_j^T r^{k-1}}{\|a_j\|_2^2}$$`
+$`z_j^*` `=` `\frac{a_j^T r^{k-1}}{\|a_j\|_2^2}`$
 
 ### 2. Support Update
 
-The index `$j_0$` of the best-performing atom is added to the active support set `$S^k$`:
+The index $`j_0`$ of the best-performing atom is added to the active support set $`S^k`$:
 
-`$$S^k = S^{k-1} \cup \{j_0\}$$`
+$`S^k` `=` `S^{k-1}` `\cup` `\{j_0\}`$
 
 ### 3. Provisional Solution (The Least Squares Step)
 
-Once the support is updated, OMP computes a new provisional solution `$x^k$`. This is defined as the minimizer of the least squares error restricted to the current support:
+Once the support is updated, OMP computes a new provisional solution $`x^k`$. This is defined as the minimizer of the least squares error restricted to the current support:
 
-`$$\min_{x} \|Ax - b\|_2^2 \quad \text{subject to } Support\{x\} = S^k$$`
+$`\min_{x}` `\|Ax - b\|_2^2` `\quad` \text{`subject to` } `Support\{x\}` `=` `S^k`$
 
-The solution to this sub-problem is found using the Moore-Penrose pseudoinverse `$A_{S}^+$` of the matrix `$A$` restricted to the columns in `$S^k$`:
+The solution to this sub-problem is found using the Moore-Penrose pseudoinverse $`A_{S}^+`$ of the matrix $`A`$ restricted to the columns in $`S^k`$:
 
-`$$x^k_{S} = (A_{S}^T A_{S})^{-1} A_{S}^T b$$`
+$`x^k_{S}` `=` `(A_{S}^T` `A_{S})^{-1}` `A_{S}^T b`$
 
 ### 4. Residual Update
 
 The residual is updated by subtracting the new approximation from the observed signal:
 
-`$$r^k = b - Ax^k$$`
+$`r^k` `=` `b` `-` `Ax^k`$
 
 This ensures the new residual is **orthogonal** to all atoms currently in the support set, preventing the algorithm from re-selecting the same atoms.
 
@@ -128,8 +128,8 @@ This ensures the new residual is **orthogonal** to all atoms currently in the su
 
 | Feature | Standard Least Squares | Orthogonal Matching Pursuit |
 | :--- | :--- | :--- |
-| **Objective** | Minimize `$\|Ax - b\|_2^2$` | Minimize `$\|x\|_0$ s.t. $Ax=b$` |
-| **System Type** | Usually Overdetermined (`$m > n$`) | Underdetermined (`$m \ll n$`) |
+| **Objective** | Minimize $`\|Ax` `-` `b\|_2^2`$ | Minimize $`\|x\|_0`$ s.t. $`Ax=b`$ |
+| **System Type** | Usually Overdetermined ($`m > n`$) | Underdetermined ($`m \ll n`$) |
 | **Logic** | Global optimization | Greedy, iterative selection |
 | **Result** | Dense solution (mostly non-zeros) | Sparse solution (mostly zeros) |
 
@@ -137,7 +137,7 @@ This ensures the new residual is **orthogonal** to all atoms currently in the su
 
 ## 🛜 Connection to Project Code
 
-* **Signal Recovery**: In `Sparse_signal_recovery_using_OMP.py`, we observe the residual decreasing as more atoms are added until it hits the error threshold $\epsilon_0$.
+* **Signal Recovery**: In `Sparse_signal_recovery_using_OMP.py`, we observe the residual decreasing as more atoms are added until it hits the error threshold $`\epsilon_0`$.
 
 ### Residual Decorrelation
 
