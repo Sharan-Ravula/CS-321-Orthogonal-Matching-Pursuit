@@ -184,21 +184,25 @@ By solving the least squares problem at every step, OMP ensures that the new res
 	- macOS/Linux:
 
 	  ```bash
-	  python3 OMP_Feature-Selection_in_Linear_Regression.py
-	  python3 Sparse_signal_recovery_using_OMP.py
-	  python3 OMP_using_Scikit-learn.py
+	  python3 omp_feature-selection_linear_regression.py
+	  python3 sparse_signal_recovery_using_omp.py
+	  python3 omp_using_scikit_learn.py
 
     - Windows:
       
 	  ```powershell
-	  python OMP_Feature-Selection_in_Linear_Regression.py
-	  python Sparse_signal_recovery_using_OMP.py
-	  python OMP_using_Scikit-learn.py
+	  python omp_feature-selection_linear_regression.py
+	  python sparse_signal_recovery_using_omp.py
+	  python omp_using_scikit_learn.py
+
+---
 
 ## 📊 Real-world Applications
 
 - **Image Denoising**: Because noise typically lacks a sparse representation in transform domains (like DCT), OMP ignores it during reconstruction, effectively denoising the image.
 - **Feature Selection**: In high-dimensional datasets, OMP selects only the most informative variables (atoms), improving model interpretability
+
+---
 
 ## **Contributors**:
    
@@ -206,6 +210,8 @@ By solving the least squares problem at every step, OMP ensures that the new res
    - Shane Wojcicki
    - Mekha Rajesh
    - Fayek Sharaf
+
+---
 
 > I had a lot of fun with the team when we were working on the project and during the presentation (got bonus points for it aswell)
 
