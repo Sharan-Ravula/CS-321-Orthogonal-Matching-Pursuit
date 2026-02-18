@@ -39,11 +39,15 @@ OMP approximates the solution of $`(P_0)` `:` `\min_x` `\|x\|_0`$ subject to $`A
 
 ### The Iterative Process
 
-1. **Sweep/Selection**: Compute the errors for all columns $`j`$ and find a minimizer $`j_0`$ that best correlates with the current residual.
-2. **Update Support**: Add the index of this column to the support set $`S^k` `=` `S^{k-1}` `\cup` `\{j_0\}`$.
-3. **Update Provisional Solution (Least Squares)**: Compute $`x^k`$ as the minimizer of $`\|Ax` `-` `b\|_2^2`$ subject to the current support.
-4. **Update Residual**: Compute the new residual $`r^k` `=` `b` `-` `Ax^k`$.
-5. **Stopping Rule**: Terminate if $`\|r^k\|_2` `<` `\epsilon_0`$ ; otherwise, apply another iteration.
+- **Sweep/Selection**: Compute the errors for all columns $`j`$ and find a minimizer $`j_0`$ that best correlates with the current residual.
+   
+- **Update Support**: Add the index of this column to the support set $`S^k` `=` `S^{k-1}` `\cup` `\{j_0\}`$.
+  
+- **Update Provisional Solution (Least Squares)**: Compute $`x^k`$ as the minimizer of $`\|Ax` `-` `b\|_2^2`$ subject to the current support.
+  
+- **Update Residual**: Compute the new residual $`r^k` `=` `b` `-` `Ax^k`$.
+  
+- **Stopping Rule**: Terminate if $`\|r^k\|_2` `<` `\epsilon_0`$ ; otherwise, apply another iteration.
 
 ---
 
@@ -56,9 +60,12 @@ Imagine you have a giant box of 1,000 different Lego bricks (the Dictionary or M
 ### The Iterative Process: How do you find those 4 bricks?
 
 - **Search (Sweep)**: You look through the box and pick the one brick that looks most like a part of the tower
-- Test (Update Support): You put that brick down and see how much of the tower it explains.
-- Adjust (Least Squares): You adjust the position of that brick to make sure it fits perfectly.
-- Repeat: Now you look at the "leftover" part of the tower (the Residual) and go back to the box to find the next best brick.
+  
+- **Test (Update Support)**: You put that brick down and see how much of the tower it explains.
+  
+- **Adjust (Least Squares)**: You adjust the position of that brick to make sure it fits perfectly.
+  
+- **Repeat**: Now you look at the "leftover" part of the tower (the Residual) and go back to the box to find the next best brick.
 
 > You keep doing this until you’ve rebuilt the tower exactly, using only those 4 pieces. OMP is "greedy" because it picks the best-fitting piece at every single step instead of trying to look at all 1,000 pieces at once.
 
@@ -74,7 +81,7 @@ Once a new index is added to the support, OMP re-calculates the values for **all
 
 $`\hat{\theta}_{S}` `=` `(X_{S}^T X_{S})^{-1}` `X_{S}^T` `y`$
 
-## Mathematical Foundation: OMP and Least Squares
+## 📐 Mathematical Foundation: OMP and Least Squares
 
 The Orthogonal Matching Pursuit (OMP) algorithm is a greedy approach used to solve the sparse recovery problem $`(P_0)`$:
 
@@ -84,7 +91,7 @@ Where $`A` \in `\mathbb{R}^{m \times n}`$ is an underdetermined sensing matrix (
 
 ---
 
-## The Iterative Process
+## 🔁 The Iterative Process
 
 OMP builds a sparse solution by selecting one "atom" (column of $`A`$) at each iteration that best represents the remaining signal (the residual).
 
@@ -175,6 +182,7 @@ By solving the least squares problem at every step, OMP ensures that the new res
 	   >  Note: If you prefer to use Homebrew on Windows, consider installing it via WSL (Windows Subsystem for Linux) and following the macOS instructions within your WSL terminal.
 
 	   + Open PowerShell as Administrator.
+   
 	   + Run the following command to install Chocolatey:
    
 	     ```powershell
@@ -238,8 +246,11 @@ When you watch a video online, the app doesn't send you every single pixel for e
 ## 📚 References
 
 - **Code**: [geeksforgeeks_omp](https://www.geeksforgeeks.org/data-science/orthogonal-matching-pursuit-omp-using-sklearn/)
+  
 - **Theory**: [sciencedirect_omp](https://www.sciencedirect.com/topics/engineering/orthogonal-matching-pursuit)
+  
 - **Book**: Sauer - Numerical Analysis 2e
+  
 - Rubinstein, R., Zibulevsky, M., & Elad, M. (2010). Efficient implementation of the K-SVD algorithm using batch orthogonal matching pursuit. IEEE Transactions on Signal Processing, 57(12), 5636-5646. https://doi.org/10.1109/TSP.2009.2039178
 
 ---
@@ -247,8 +258,11 @@ When you watch a video online, the app doesn't send you every single pixel for e
 ## 💥 **Contributors**:
    
    - Sharan Ravula
+     
    - Shane Wojcicki
+     
    - Mekha Rajesh
+     
    - Fayek Sharaf
 
 ---
