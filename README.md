@@ -16,16 +16,17 @@ CS-321-Orthogonal-Matching-Pursuit/
 │   ├── cs_ma 321_final.pdf                         	# The original project prompt and technical requirements for the Final Project
 │   ├── cs_ma_321_omp.pdf        						# The comprehensive slide deck created by the team, covering OMP theory, least squares connection, and real-world applications
 │
-├── scripts/                                       		# Python implementations demonstrating different use cases for the OMP algorithm.
+├── scripts/                                       		# Python implementations demonstrating different use cases for the OMP algorithm
 │   ├── omp_feature-selection_linear_regression.py 		# Demonstrates how OMP can be used as a feature selection tool to identify the most significant variables in a regression model
 │   ├── omp_using_scikit_learn.py                  		# A foundational script showing the implementation of the `OrthogonalMatchingPursuit` class on a basic sparse signal
 │   ├── sparse_signal_recovery_using_omp.py        		# Illustrates the recovery of a sparse signal from noisy measurements, including visual comparisons between original and recovered data
 │
-├── output/                                           	# Visual evidence of the algorithm's performance and execution results.
+├── output/                                           	# Visual evidence of the algorithm's performance and execution results
 │   ├── omp_feature-selection_linear_regression.py      # Generated plot showing the original sparse signal, the noisy observed signal, and the successfully recovered signal using OMP
 │   ├── omp-output.png                           		# Terminal output showing the original signal vs. estimated coefficients and the identified support set
-│	├── linear_regression_graph.png                     # Graph illustrates the effectiveness of Orthogonal Matching Pursuit (OMP) as a feature selection tool within a linear regression model.
+│	├── linear_regression_graph.png                     # Graph illustrates the effectiveness of Orthogonal Matching Pursuit (OMP) as a feature selection tool within a linear regression model
 │
+├── team_5.png                           				# Team_5 Group Selfie, Unfortunately Mekha was not present
 ├── README.md                           				# Project overview and instructions
 └── LICENSE                             				# License information for the repository
 ```
