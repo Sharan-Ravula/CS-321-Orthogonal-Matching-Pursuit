@@ -105,20 +105,21 @@ This ensures the new residual is **orthogonal** to all atoms currently in the su
 
 | Feature | Standard Least Squares | Orthogonal Matching Pursuit |
 | :--- | :--- | :--- |
-| **Objective** | Minimize $\|Ax - b\|_2^2$ [cite: 596] | Minimize $\|x\|_0$ s.t. [cite_start]$Ax=b$ [cite: 12] |
-| **System Type** | Usually Overdetermined ($m > n$) | [cite_start]Underdetermined ($m \ll n$) [cite: 9] |
-| **Logic** | Global optimization [cite: 151, 589] | [cite_start]Greedy, iterative selection [cite: 11, 599] |
-| **Result** | Dense solution (mostly non-zeros) [cite: 148] | [cite_start]Sparse solution (mostly zeros) [cite: 10, 601] |
+| **Objective** | Minimize $\|Ax - b\|_2^2$ | Minimize $\|x\|_0$ s.t. $Ax=b$ |
+| **System Type** | Usually Overdetermined ($m > n$) | Underdetermined ($m \ll n$) |
+| **Logic** | Global optimization | Greedy, iterative selection |
+| **Result** | Dense solution (mostly non-zeros) | Sparse solution (mostly zeros) |
 
 ---
 
 ## Connection to Project Code
-* [cite_start]**Signal Recovery**: In `Sparse_signal_recovery_using_OMP.py`, we observe the residual decreasing as more atoms are added until it hits the error threshold $\epsilon_0$[cite: 25, 584, 586].
-* **Image Denoising**: In `image-denoise.py`, OMP is used to find a sparse representation of image patches. [cite_start]Noise is ignored because it typically lacks a sparse representation in the transform domain[cite: 618].
+
+* **Signal Recovery**: In `Sparse_signal_recovery_using_OMP.py`, we observe the residual decreasing as more atoms are added until it hits the error threshold $\epsilon_0$.
+* **Image Denoising**: In `image-denoise.py`, OMP is used to find a sparse representation of image patches. Noise is ignored because it typically lacks a sparse representation in the transform domain.
 
 ### Residual Decorrelation
 
-By solving the least squares problem at every step, OMP ensures that the new residual is **orthogonal** to all columns currently in the support set[cite: 597]. [cite_start]This prevents the algorithm from picking the same column twice and ensures the residual norm decreases efficiently.
+By solving the least squares problem at every step, OMP ensures that the new residual is **orthogonal** to all columns currently in the support set. This prevents the algorithm from picking the same column twice and ensures the residual norm decreases efficiently.
 
 ---
 
@@ -206,8 +207,6 @@ By solving the least squares problem at every step, OMP ensures that the new res
    - Mekha Rajesh
    - Fayek Sharaf
 
-![team-5](https://github.com/user-attachments/assets/db025bbf-968a-4093-9255-b109ed053eb4)
-
-
+> I had a lot of fun with the team when we were working on the project and giving presentation
 
 <img width="1715" height="1291" alt="team_5" src="https://github.com/user-attachments/assets/dd96fd46-0d7f-46bb-841b-f85e706c2321" />
