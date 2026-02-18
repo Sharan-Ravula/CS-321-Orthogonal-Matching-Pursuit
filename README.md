@@ -236,6 +236,7 @@ When you watch a video online, the app doesn't send you every single pixel for e
 
 - **Code**: [geeksforgeeks_omp](https://www.geeksforgeeks.org/data-science/orthogonal-matching-pursuit-omp-using-sklearn/)
 - **Theory**: [sciencedirect_omp](https://www.sciencedirect.com/topics/engineering/orthogonal-matching-pursuit)
+- **Book**: Sauer - Numerical Analysis 2e
 - Rubinstein, R., Zibulevsky, M., & Elad, M. (2010). Efficient implementation of the K-SVD algorithm using batch orthogonal matching pursuit. IEEE Transactions on Signal Processing, 57(12), 5636-5646. https://doi.org/10.1109/TSP.2009.2039178
 
 ---
