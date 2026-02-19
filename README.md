@@ -181,7 +181,7 @@ By solving the least squares problem at every step, OMP ensures that the new res
 
 	   >  Note: If you prefer to use Homebrew on Windows, consider installing it via WSL (Windows Subsystem for Linux) and following the macOS instructions within your WSL terminal.
 
-	   + Open PowerShell as Administrator.
+	   > Open PowerShell as Administrator.
    
 	   + Run the following command to install Chocolatey:
    
