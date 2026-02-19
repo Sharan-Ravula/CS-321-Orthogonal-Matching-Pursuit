@@ -214,14 +214,14 @@ By solving the least squares problem at every step, OMP ensures that the new res
 	- macOS/Linux:
 
 	  ```bash
-	  python3 omp_feature-selection_linear_regression.py
+	  python3 omp_feature_selection_linear_regression.py
 	  python3 sparse_signal_recovery_using_omp.py
 	  python3 omp_using_scikit_learn.py
 
     - Windows:
       
 	  ```powershell
-	  python omp_feature-selection_linear_regression.py
+	  python omp_feature_selection_linear_regression.py
 	  python sparse_signal_recovery_using_omp.py
 	  python omp_using_scikit_learn.py
 
