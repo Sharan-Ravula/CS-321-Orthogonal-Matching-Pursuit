@@ -22,7 +22,7 @@ CS-321-Orthogonal-Matching-Pursuit/
 │   ├── sparse_signal_recovery_using_omp.py        		# Illustrates the recovery of a sparse signal from noisy measurements, including visual comparisons between original and recovered data
 │
 ├── output/                                           	# Visual evidence of the algorithm's performance and execution results
-│   ├── omp_feature-selection_linear_regression.py      # Generated plot showing the original sparse signal, the noisy observed signal, and the successfully recovered signal using OMP
+│   ├── omp_graph.py      								# Generated plot showing the original sparse signal, the noisy observed signal, and the successfully recovered signal using OMP
 │   ├── omp-output.png                           		# Terminal output showing the original signal vs. estimated coefficients and the identified support set
 │	├── linear_regression_graph.png                     # Graph illustrates the effectiveness of Orthogonal Matching Pursuit (OMP) as a feature selection tool within a linear regression model
 │
