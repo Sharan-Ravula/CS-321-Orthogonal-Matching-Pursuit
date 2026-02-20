@@ -269,4 +269,4 @@ When you watch a video online, the app doesn't send you every single pixel for e
 
 > I had a lot of fun with the team when we were working on the project and during the presentation (got bonus points for it aswell)
 
-<img width="1715" height="1291" alt="team_5" src="https://github.com/user-attachments/assets/dd96fd46-0d7f-46bb-841b-f85e706c2321"
+<img width="1715" height="1291" alt="team_5" src="https://github.com/user-attachments/assets/dd96fd46-0d7f-46bb-841b-f85e706c2321" />
