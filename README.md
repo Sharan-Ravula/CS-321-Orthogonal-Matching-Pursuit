@@ -146,7 +146,7 @@ This ensures the new residual is orthogonal to all atoms currently in the suppor
 
 * Signal Recovery: In `Sparse_signal_recovery_using_OMP.py`, we observe the residual decreasing as more atoms are added until it hits the error threshold $`\epsilon_0`$.
 
-### Residual Decorrelation
+### * Residual Decorrelation
 
 By solving the least squares problem at every step, OMP ensures that the new residual is orthogonal to all columns currently in the support set. This prevents the algorithm from picking the same column twice and ensures the residual norm decreases efficiently.
 
@@ -269,4 +269,4 @@ When you watch a video online, the app doesn't send you every single pixel for e
 
 > I had a lot of fun with the team when we were working on the project and during the presentation (got bonus points for it aswell)
 
-<img width="1715" height="1291" alt="team_5" src="https://github.com/user-attachments/assets/dd96fd46-0d7f-46bb-841b-f85e706c2321" /
+<img width="1715" height="1291" alt="team_5" src="https://github.com/user-attachments/assets/dd96fd46-0d7f-46bb-841b-f85e706c2321"
